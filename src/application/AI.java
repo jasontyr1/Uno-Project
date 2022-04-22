@@ -9,6 +9,11 @@ TODO figure out how I make an AI difficulty and what to change about the AI’s 
 
 */
 class AI extends Player {
+    
+    public AI(String name) {
+        super(name);
+        //TODO Auto-generated constructor stub
+    }
     void assignPointsToDeck(Card[] deck, Card cardOnTopOfDiscardStack) {
 
     }

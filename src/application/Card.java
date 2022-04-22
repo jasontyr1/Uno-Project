@@ -9,17 +9,64 @@ OR a single method to handle all plays either in this class or another: 				card
 This can return something if the play the player is trying to make is invalid
 
 */
-class Card {
+public final class Card {
 
-    enum Value {
-            ZERO, ONE, TWO,
-            THREE, FOUR, FIVE,
-            SIX, SEVEN, EIGHT,
-            NINE, PLUS_TWO, PLUS_FOUR,
-            WILDCARD, SKIP, REVERSE
-        };
-
-    public Card(String color, String value) {
-        
-    }
+	private int cardNum;//int representing the card's value, non-face cards have a value of -1
+	private String cardColor; //color is a string instead of Color object as it's simpler when we only have 4 colors to deal with
+	public enum Type{FACE, SKIP, REVERSE,WILD, DRAW2,DRAW4};//enumeration for skips, reverses, and draw cards
+	private Type cardType;
+	public Card(int number, String color)
+	{
+		setNum(number);
+		setColor(color);
+		switch(number){
+		case 10:
+			this.setType(Type.SKIP);
+			break;
+		case 11:
+			this.setType(Type.REVERSE);
+			break;
+		case 12:
+			this.setType(Type.DRAW2);
+			break;
+		case 13:
+			this.setType(Type.WILD);
+			break;
+		case 14:
+			this.setType(Type.DRAW4);
+			break;
+		default:
+			this.setType(Type.FACE);
+		}
+	}
+	public void setNum(int number)
+	{
+		this.cardNum = number;
+	}
+	public int getNum()
+	{
+		return this.cardNum;
+	}
+	public void setColor(String color)
+	{
+		this.cardColor = color.toLowerCase(); //convert to lower case to keep consistent for later comparisons
+	}
+	public String getColor()
+	{
+		return this.cardColor;
+	}
+	public void setType(Type cardType)
+	{
+		this.cardType = cardType;
+	}
+	public Type getType()
+	{
+		return this.cardType;
+	}
+	public String toString()
+	{
+		if(this.getType()==Type.FACE)
+			return "["+this.getType()+" "+this.getColor()+" "+this.getNum()+"]";
+		return "["+this.getType()+" "+this.getColor()+"]";//returns "[Type Color Num]"
+	}
 }
