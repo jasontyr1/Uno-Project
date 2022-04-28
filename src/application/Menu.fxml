@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: gray; -fx-border-color: black;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuCotroller">
+   <top>
+      <AnchorPane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: grey; -fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="299.0" layoutY="17.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@data/UNO%20logo.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="20.0" arcWidth="30.0" fill="WHITE" height="137.0" layoutX="271.0" layoutY="247.0" onMouseClicked="#onStart" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="236.0" AnchorPane.bottomAnchor="416.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="295.0" AnchorPane.topAnchor="247.0" />
+            <Label alignment="CENTER" layoutX="270.0" layoutY="273.0" onMouseClicked="#onStart" prefHeight="84.0" prefWidth="236.0" text="Start" AnchorPane.bottomAnchor="442.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="273.0">
+               <font>
+                  <Font name="HoloLens MDL2 Assets" size="36.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="20.0" arcWidth="30.0" fill="WHITE" height="137.0" layoutX="271.0" layoutY="425.0" onMouseClicked="#onHowToPlay" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="236.0" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="293.0" AnchorPane.topAnchor="425.0" />
+            <Label alignment="CENTER" layoutX="274.0" layoutY="441.0" onMouseClicked="#onHowToPlay" prefHeight="84.0" prefWidth="236.0" text="How to Play" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="274.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="441.0">
+               <font>
+                  <Font name="HoloLens MDL2 Assets" size="36.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="rulesPane" layoutX="185.0" layoutY="173.0" prefHeight="469.0" prefWidth="589.0" visible="false">
+              <content>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="804.0" prefWidth="590.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="64.0" prefHeight="41.0" prefWidth="115.0" text="Game Play:" underline="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="14.0" layoutY="97.0" prefHeight="210.0" prefWidth="545.0" text="The first player is normally the player to the left of the dealer (you can also choose the youngest player) and gameplay usually follows a clockwise direction. Every player views his/her cards and tries to match the card in the Discard Pile.You have to match either by the number, color, or the symbol/Action. For instance, if the Discard Pile has a red card that is an 8 you have to place either a red card or a card with an 8 on it. You can also play a Wild card (which can alter current color in play).If the player has no matches or they choose not to play any of their cards even though they might have a match, they must draw a card from the Draw pile. If that card can be played, play it. Otherwise, keep the card, and the game moves on to the next person in turn. You can also play a Wild card, or a Wild Draw Four card on your turn." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="RulesText" layoutX="177.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How To Play" underline="true">
+                           <font>
+                              <Font name="HoloLens MDL2 Assets" size="36.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="closeHowToPlay" alignment="CENTER" layoutX="14.0" layoutY="14.0" onMouseClicked="#minimizeRules" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black;" text="X">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="307.0" text="Action Cards:" underline="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="8.0" layoutY="334.0" prefHeight="44.0" prefWidth="558.0" text="Besides the number cards, there are several other cards that help mix up the game. These are called Action or Symbol cards." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="378.0" prefHeight="84.0" prefWidth="559.0" text="Reverse – If going clockwise, switch to counterclockwise or vice versa. It can only be played on a card that matches by color, or on another Reverse card. If turned up at the beginning of play, the dealer goes first, and the player to the dealer’s right is next (normally it would be the player to the dealer’s left)." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="462.0" prefHeight="84.0" prefWidth="559.0" text="Skip – When a player places this card, the next player has to skip their turn. It can only be played on a card that matches by color, or on another Skip card. If turned up at the beginning of play, the first player (to the dealer’s left) loses his/her turn. The next player to that player’s right starts the game instead." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="8.0" layoutY="546.0" prefHeight="84.0" prefWidth="559.0" text="Draw Two – When a person places this card, the next player will have to pick up two cards and forfeit his/her turn. It can only be played on a card that matches by color, or on another Draw Two. If turned up at the beginning of play, the first player draws two cards and gets skipped." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="630.0" prefHeight="84.0" prefWidth="559.0" text="Wild – This card represents all four colors, and can be placed on any card. The player has to state which color it will represent for the next player. It can be played regardless of whether another card is available. If turned up at the beginning of play, the first player chooses what color to continue play." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
