@@ -9,15 +9,28 @@ TODO figure out how I make an AI difficulty and what to change about the AI’s 
 
 */
 class AI extends Player {
+    private int difficulty; // 0 - easiest, 3 - hardest
     
-    public AI(String name) {
+    public AI(String name, int difficulty) {
         super(name);
+        this.difficulty = difficulty;
         //TODO Auto-generated constructor stub
     }
-    void assignPointsToDeck(Card[] deck, Card cardOnTopOfDiscardStack) {
+    
+    public int getCardToPlay() {
+        // use difficutly to detemine which card to play
+
+        // 0 - Easy
+        // Choose by first available card in hand that is valid
+
+        // 1 - Medium
+        // Attempt to play "higher-tier" cards first (i.e. +4, +2, Skips, etc)
+
+        // 2 - Hard
+        // IDEA: have AI "cheat" and attempt to play card that could hurt player most
+        return -1;
 
     }
-    void removeCard(Card[] deck, int cardIndex) {
 
-    }
+    
 }
