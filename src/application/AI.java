@@ -9,12 +9,12 @@ TODO figure out how I make an AI difficulty and what to change about the AI’s 
 
 */
 class AI extends Player {
-    private int difficulty; // 0 - easiest, 3 - hardest
+    public static enum Difficulty {EASY, MEDIUM, HARD};
+    private Difficulty difficulty; // 0 - easiest, 3 - hardest
     
-    public AI(String name, int difficulty) {
+    public AI(String name, Difficulty difficulty) {
         super(name);
         this.difficulty = difficulty;
-        //TODO Auto-generated constructor stub
     }
     
     public int getCardToPlay() {
