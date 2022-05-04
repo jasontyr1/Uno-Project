@@ -55,8 +55,8 @@ public class Player{
   //helper function for checking valid matches
   public boolean isValid(Card c, Card d)
   {
-    //TODO delete getType because special cards are representated as nums
-	  if(c.getType().equals(d.getType()) || c.getColor().equals(d.getColor()) || c.getNum() == d.getNum())
+    
+	  if(c.getColor().equals(d.getColor()) || c.getNum() == d.getNum())
 		  return true;
 	  else
 		  return false;
